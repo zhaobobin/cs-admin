@@ -1,1 +1,74 @@
 /* You can add global styles to this file, and also import other style files */
+@import "../node_modules/ng-zorro-antd/ng-zorro-antd.less";
+
+@primary-color: #64B1FF;
+
+body {
+  overflow: hidden;
+  font-size: 16px;
+  color: #333;
+}
+
+h1, h2, h3, h4 {
+  margin: 0;
+}
+
+ul, li {
+  list-style: none;
+}
+
+image {
+  border: none;
+}
+
+p {
+  margin: 0;
+}
+
+::-webkit-scrollbar{
+  display: none;
+}
+
+.router-wrapper > .ng-star-inserted {
+  width: 100%;
+}
+
+.departmentModal {
+  .ant-modal-content {
+    border-radius: 1.25rem;
+    overflow: hidden;
+  }
+  .ant-modal-header {
+    background: #3C88FE;
+  }
+  .ant-modal-title {
+    text-align: center;
+    color: #fff;
+  }
+  .ant-modal-footer {
+    padding-bottom: 1.6rem;
+    text-align: center;
+    border: none;
+    .ant-btn {
+      margin: 0 0.88rem;
+      width: 6.32rem;
+      border-radius: 0.38rem;
+      &.default {
+        color: #3C88FE;
+        border-color: #3C88FE;
+      }
+    }
+  }
+  .ant-transfer-list-header, .ant-transfer-list, .ant-tree {
+    background: #F4F6F8;
+  }
+  .ant-transfer-list-body-customize-wrapper {
+    overflow-y: auto;
+  }
+}
+
+.member-manage {
+  .ant-tree .ant-tree-node-content-wrapper .ant-tree-iconEle {
+    color: #FAAD17;
+  }
+}

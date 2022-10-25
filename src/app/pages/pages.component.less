@@ -1,0 +1,147 @@
+.layout-container {
+  height: 100vh;
+}
+.layout-header {
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 999;
+}
+.layout-main {
+  padding-top: 68px;
+  height: 100%;
+  background: #EFEFEF;
+
+  .menu-wrapper {
+    float: left;
+    width: 200px;
+    height: 100%;
+    position: relative;
+    z-index: 99;
+    background: linear-gradient(208deg, #398FD7 0%, #56C4C5 100%);
+    box-shadow: 0px 4px 4px 0px rgba(22,22,22,0.05);
+  }
+  .layout-content {
+    display: flex;
+    height: 100%;
+    margin-left: 200px;
+    flex-direction: column;
+    overflow-x: auto;
+  }
+}
+
+.header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 68px;
+  padding: 0 1.7rem;
+  background: #fff;
+  box-shadow: 0px 2px 8px 0px rgba(216,216,216,0.5);
+
+  .logo img {
+    width: auto;
+    height: 3rem;
+  }
+
+  .actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100%;
+  }
+  .action {
+    display: flex;
+    align-items: center;
+    padding: 0 24px;
+    cursor: pointer;
+    img {
+      margin-right: 8px;
+      width: auto;
+      height: 22px;
+    }
+    span {
+      width: 32px;
+    }
+  }
+  .search {
+    padding: 0 20px 0 30px;
+    .ant-input-affix-wrapper {
+      border-radius: 16px;
+      opacity: 0.86;
+      color: #64B1FF;
+      border: 1px solid rgba(100, 177, 255, .86);
+    }
+    .ant-input {
+      color: #64B1FF;
+      &::placeholder {
+        color: rgba(100, 177, 255, .6);
+      }
+    }
+  }
+  .userinfo {
+    display: flex;
+    height: 100%;
+    padding: 12px 25px;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    img.avatar {
+      margin-right: 12px;
+      width: auto;
+      height: 45px;
+    }
+    p {
+      min-width: 48px;
+      text-align: center;
+    }
+    .name {
+      display: block;
+      line-height: 22px;
+      font-size: 16px;
+    }
+    .role {
+      display: block;
+      line-height: 16px;
+      font-size: 12px;
+    }
+    img.arrow {
+      width: auto;
+      height: 8px;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      margin-top: -12px;
+    }
+  }
+}
+
+.nav-menu {
+  a {
+    display: flex;
+    align-items: center;
+    height: 56px;
+    font-size: 16px;
+    border-bottom: 1px solid rgba(255,255,255,.2);
+    color: #fff;
+    position: relative;
+    &.active {
+      background: #0D6CB8;
+    }
+
+    .icon {
+      display: block;
+      margin-left: 45px;
+      margin-right: 20px;
+      width: 20px;
+      height: 20px;
+      text-align: center;
+      img {
+        display: block;
+        width: auto;
+        height: 100%;
+      }
+    }
+  }
+}

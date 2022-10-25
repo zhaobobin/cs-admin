@@ -1,0 +1,109 @@
+<div class="workbench" nz-row nzGutter="12">
+  <div nz-col nzSpan="14">
+    <div class="section section1" nz-row nzGutter="14">
+      <div nz-col nzSpan="8"
+        *ngFor="let item of cards">
+        <div class="card">
+          <div class="title">
+            <img [src]="item.icon" alt="icon" class="icon">
+            <h3 class="name">{{ item.name }}</h3>
+            <span class="number">{{ item.number }}</span>
+            <span>个</span>
+          </div>
+          <img [src]="item.img" alt="img" class="image">
+        </div>
+      </div>
+    </div>
+    <div class="section card section2">
+      <h2>待办工作</h2>
+      <div class="menus">
+        <div 
+          class="menu"
+          [ngClass]="{'active': menu.key === currentTodoMenu}"
+          *ngFor="let menu of todoMenus"
+          (click)="changeCurrentTodoMenu(menu.key)"
+        >
+          <img [src]="menu.icon" alt="icon" class="icon">
+          <span>{{ menu.name }}</span>
+          <span>({{ menu.number }})</span>
+          <p class="current">
+            <span class="arrow"></span>
+          </p>
+        </div>
+      </div>
+      <div class="list">
+        <div 
+          class="item"
+          *ngFor="let item of todoList"
+        >
+          <p class="title">{{ item.title }}</p>
+          <p class="date">{{ item.date }}</p>
+          <button nz-button nzType="primary">
+            <span nz-icon nzType="edit"></span>
+            <span>办理</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="section card section3">
+      <h2>通知公告</h2>
+      <div class="list">
+        <div 
+          class="item"
+          *ngFor="let item of todoList"
+        >
+          <a routerLink="/">
+            <span class="title">{{ item.title }}</span>
+            <span class="date">{{ item.date }}</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div nz-col nzSpan="10">
+    <div class="section card section4">
+      <h2>常用菜单</h2>
+      <div nz-row nzGutter="10">
+        <div nz-col nzSpan="9">
+          <div class="wrapper">
+            <h3>统一门户</h3>
+            <div nz-row nzGutter="12">
+              <div 
+                nz-col 
+                nzSpan="12" 
+                class="item"
+                *ngFor="let item of commonMenus[0]"
+              >
+                <a routerLink="/">
+                  <img [src]="item.icon" alt="icon" class="icon">
+                  <p>{{ item.name }}</p>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div nz-col nzSpan="15">
+          <div class="wrapper">
+            <h3>统一门户</h3>
+            <div nz-row nzGutter="12">
+              <div 
+                nz-col 
+                nzSpan="8" 
+                class="item"
+                *ngFor="let item of commonMenus[1]"
+              >
+                <a routerLink="/">
+                  <img [src]="item.icon" alt="icon" class="icon">
+                  <p>{{ item.name }}</p>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section card section5">
+      <h2>日程</h2>
+    </div>
+  </div>
+</div>

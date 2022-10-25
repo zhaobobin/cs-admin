@@ -1,0 +1,67 @@
+<div class="layout-container">
+  <div class="layout-header">
+    <div class="header-top">
+      <div class="logo">
+        <img src="assets/images/common/logo.png" alt="logo">
+      </div>
+      <div class="actions">
+        <div class="action order">
+          <img src="assets/images/common/order.png" alt="order">
+          <span>工单</span>
+        </div>
+        <div class="action message">
+          <img src="assets/images/common/notice.png" alt="notice">
+          <span>消息</span>
+        </div>
+        <div class="search">
+          <nz-input-group [nzPrefix]="prefixIconSearch">
+            <input type="text" nz-input placeholder="请输入关键字搜索" />
+          </nz-input-group>
+          <ng-template #prefixIconSearch>
+            <span nz-icon nzType="search"></span>
+          </ng-template>
+        </div>
+        <div 
+          class="userinfo"
+          nz-dropdown 
+          [nzDropdownMenu]="menu" 
+        >
+          <img [src]="userInfo.avatar" alt="avatar" class="avatar">
+          <p>
+            <span class="name">{{ userInfo.name }}</span>
+            <span class="role">{{ userInfo.role }}</span>
+            <img src="assets/images/common/arrow_down.png" alt="arrow" class="arrow">
+          </p>
+        </div>
+        <nz-dropdown-menu #menu="nzDropdownMenu">
+          <ul nz-menu>
+            <li nz-menu-item (click)="logout">安全退出</li>
+          </ul>
+        </nz-dropdown-menu>
+      </div>
+    </div>
+  </div>
+  
+  <div class="layout-main">
+    <div class="menu-wrapper">
+      <div class="nav-menu">
+        <nav>
+          <a 
+            *ngFor="let item of menus"
+            [routerLink]="item.path" 
+            routerLinkActive="active"
+            (click)="handleClickMenu(item.path)"
+          >
+            <span class="icon">
+              <img [src]="item.icon" alt="icon">
+            </span>
+            <span>{{ item.name }}</span>
+          </a>
+        </nav>
+      </div>
+    </div>
+    <div class="layout-content">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
