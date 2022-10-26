@@ -204,7 +204,139 @@
   }
 
   .section5 {
+    display: flex;
+    flex-direction: column;
     height: 604px;
+    
+    .wrapper {
+      flex: 1;
+      .calendar {
+        padding: 0 10px;
+      }
+      .event {
+        display: flex;
+        flex-direction: column;
+        margin: 0 24px;
+        padding: 8px 16px;
+        height: 164px;
+        background: #F5FAFF;
+        border: 1px dashed #C6E2FF;
+        .tag {
+          margin-bottom: 15px;
+          span {
+            display: inline-block;
+            margin-right: 12px;
+            padding: 0 16px;
+            height: 22px;
+            line-height: 20px;
+            font-size: 12px;
+            color: #64B1FF;
+            background: #fff;
+            border-radius: 12px;
+            border: 1px solid #64B1FF;
+            cursor: pointer;
+            &.active {
+              color: #fff;
+              background: #64B1FF;
+            }
+          }
+        }
+        .list {
+          flex: 1;
+          padding: 0 24px;
+          overflow-y: auto;
+          .item {
+            height: 52px;
+            padding: 10px 0 10px 80px;
+            position: relative;
+            .time {
+              width: 60px;
+              height: 32px;
+              line-height: 16px;
+              font-size: 12px;
+              border-right: 4px solid #64B1FF;
+              position: absolute;
+              left: 0;
+              top: 50%;
+              margin-top: -16px;
+            }
+            .name {
+              font-size: 12px;
+              line-height: 32px;
+            }
+          }
+        }
+      }
+    }
   }
+
+  // 日历样式 begin
+  ::ng-deep .ant-picker-calendar-header {
+    padding: 0 15px;
+    .ant-picker-calendar-mode-switch {
+      display: none;
+    }
+  }
+  ::ng-deep .ant-picker-calendar-full .ant-picker-panel {
+    .ant-picker-body th {
+      padding: 0;
+      padding-right: 0;
+      text-align: center;
+      line-height: 42px;
+    }
+
+    .ant-picker-cell {
+      &.ant-picker-cell-today .ant-picker-calendar-date {
+        color: #2C3135;
+        background: #f0faff;
+      }
+  
+      &.ant-picker-cell-selected .ant-picker-calendar-date {
+        color: #fff;
+        background: #64B1FF;
+        .schedule p {
+          color: #fff;
+          border-left: 3px solid #fff;
+        }
+      }
+
+      .ant-picker-calendar-date {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        margin: 3px 4px;
+        height: 42px;
+        line-height: 42px;
+        font-size: 12px;
+        text-align: left;
+        border: none;
+        .date {
+          padding: 0 8px;
+        }
+        .schedule {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          padding: 3px 0;
+          height: 100%;
+          p {
+            width: 50px;
+            justify-content: start;
+            height: 16px;
+            line-height: 16px;
+            font-size: 10px;
+            text-indent: 8px;
+            text-align: left;
+            color: #64B1FF;
+            border-left: 3px solid #398FD7;
+          }
+        }
+      }
+
+    }
+
+  }
+  // 日历样式 end!
 
 }
