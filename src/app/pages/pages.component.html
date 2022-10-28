@@ -45,19 +45,48 @@
   <div class="layout-main">
     <div class="menu-wrapper">
       <div class="nav-menu">
-        <nav>
-          <a 
+        <ul 
+          nz-menu 
+          nzMode="inline"
+        >
+          <li
             *ngFor="let item of menus"
-            [routerLink]="item.path" 
-            routerLinkActive="active"
-            (click)="handleClickMenu(item.path)"
           >
-            <span class="icon">
-              <img [src]="item.icon" alt="icon">
-            </span>
-            <span>{{ item.name }}</span>
-          </a>
-        </nav>
+            <a 
+              *ngIf="!item.children"
+              nz-menu-item
+              routerLinkActive="active"
+              [routerLink]="item.path"
+              (click)="handleClickMenu(item.path)"
+            >
+              <span class="icon"><img [src]="item.icon" alt="icon"></span>
+              <span>{{ item.navtitle }}</span>
+            </a>
+
+            <div
+              *ngIf="item.children"
+              [nzTitle]="titleTpl"
+              [nzOpen]="true"
+              nz-submenu
+            >
+              <ng-template #titleTpl>
+                <span class="icon"><img [src]="item.icon" alt="icon"></span>
+                <span>{{ item.navtitle }}</span>
+              </ng-template>
+              <a 
+                *ngFor="let child of item.children"
+                nz-menu-item
+                routerLinkActive="active"
+                [routerLink]="child.path"
+                (click)="handleClickMenu(child.path)"
+              >
+                <span class="icon"><img [src]="child.icon" alt="icon"></span>
+                <span>{{ child.navtitle }}</span>
+              </a>
+            </div>
+          </li>
+        </ul>
+        
       </div>
     </div>
     <div class="layout-content">

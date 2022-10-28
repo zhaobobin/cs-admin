@@ -26,6 +26,7 @@ import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
 import { NzTransferModule } from 'ng-zorro-antd/transfer';
 import { NzSkeletonModule } from 'ng-zorro-antd/skeleton';
 import { NzCalendarModule } from 'ng-zorro-antd/calendar';
+import { NzMenuModule } from 'ng-zorro-antd/menu';
 
 import { NotFoundComponent } from './pages/other/not-found.component';
 
@@ -63,7 +64,8 @@ registerLocaleData(zh);
     NzBreadCrumbModule,
     NzTransferModule,
     NzSkeletonModule,
-    NzCalendarModule
+    NzCalendarModule,
+    NzMenuModule
   ],
   providers: [{ provide: NZ_I18N, useValue: zh_CN }],
   bootstrap: [AppComponent]
