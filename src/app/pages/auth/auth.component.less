@@ -1,0 +1,92 @@
+.auth-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  position: relative;
+  overflow-y: auto;
+  background: url('../../../assets/images/auth/bg.jpg') no-repeat center center;
+  background-size: cover;
+
+  .head {
+    display: flex;
+    padding: 80px 0 20px;
+    justify-content: center;
+
+    .logo {
+      margin: 0;
+
+      img {
+        width: auto;
+        height: 100px;
+      }
+    }
+  }
+
+  .body {
+    display: flex;
+    flex: 1;
+  }
+
+  .foot {
+    display: flex;
+    height: 3rem;
+    align-items: center;
+    justify-content: center;
+
+    p {
+      margin: 0;
+      font-size: 0.86rem;
+      font-family: PingFang SC;
+      color: #fff;
+    }
+  }
+
+  ::ng-deep .ant-tabs-tabpane {
+    padding: 1rem 5rem 0;
+  }
+  ::ng-deep .ant-btn-primary {
+    border-color: #52C1C8;
+    background: #52C1C8;
+  }
+  ::ng-deep .ant-checkbox-checked .ant-checkbox-inner {
+    background-color: #52C1C8;
+    border-color: #52C1C8;
+  }
+  ::ng-deep .ant-input-affix-wrapper:not(.ant-input-affix-wrapper-disabled):hover {
+    border-color: #52C1C8;
+  }
+  ::ng-deep .ant-input-status-error:not(.ant-input-disabled):not(.ant-input-borderless).ant-input:hover {
+    border-color: #52C1C8;
+  }
+  ::ng-deep .ant-input {
+    border-radius: 6px;
+    &:hover {
+      border-color: #52C1C8;
+    }
+  }
+  ::ng-deep .ant-input:focus, .ant-input-focused {
+    border-color: #52C1C8;
+  }
+  ::ng-deep .cdk-focused {
+    border-color: #52C1C8;
+  }
+  ::ng-deep .ant-tabs-top > .ant-tabs-nav::before {
+    border: none;
+  }
+  ::ng-deep .ant-tabs-tab {
+    padding: 12px 15px;
+  }
+  ::ng-deep .ant-tabs-tab-btn {
+    font-size: 20px;
+    &:hover {
+      color: #52C1C8;
+    }
+  }
+  ::ng-deep .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+    color: #52C1C8;
+  }
+  ::ng-deep .ant-tabs-ink-bar {
+    height: 4px;
+    background-color: #52C1C8;
+  }
+}

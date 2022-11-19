@@ -27,8 +27,13 @@ import { NzTransferModule } from 'ng-zorro-antd/transfer';
 import { NzSkeletonModule } from 'ng-zorro-antd/skeleton';
 import { NzCalendarModule } from 'ng-zorro-antd/calendar';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
+import { NzTabsModule } from 'ng-zorro-antd/tabs';
 
 import { NotFoundComponent } from './pages/other/not-found.component';
+
+import { AuthComponent } from './pages/auth/auth.component';
+import { AuthLoginComponent } from './pages/auth/login/login.component';
+import { AuthResetComponent } from './pages/auth/reset/reset.component';
 
 import { PagesComponent } from './pages/pages.component';
 import { WorkbenchComponent } from './pages/workbench/workbench.component';
@@ -39,6 +44,9 @@ registerLocaleData(zh);
   declarations: [
     AppComponent,
     NotFoundComponent,
+    AuthComponent,
+    AuthLoginComponent,
+    AuthResetComponent,
     
     PagesComponent,
     WorkbenchComponent,
@@ -65,7 +73,8 @@ registerLocaleData(zh);
     NzTransferModule,
     NzSkeletonModule,
     NzCalendarModule,
-    NzMenuModule
+    NzMenuModule,
+    NzTabsModule
   ],
   providers: [{ provide: NZ_I18N, useValue: zh_CN }],
   bootstrap: [AppComponent]

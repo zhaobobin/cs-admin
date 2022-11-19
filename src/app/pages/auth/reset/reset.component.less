@@ -1,0 +1,104 @@
+.reset-wrapper {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+  .left {
+    display: flex;
+    float: left;
+    width: 66.66%;
+    height: 100%;
+    align-items: center;
+    position: relative;
+    background: url('../../../assets/images/auth/login_bg2.png') no-repeat center center;
+    background-size: 85% auto;
+  }
+
+  .right {
+    float: left;
+    width: 33.33%;
+  }
+
+  .login-form {
+    height: auto;
+    padding: 3rem;
+    background: rgba(255, 255, 255, .7);
+    border-radius: 0.43rem;
+
+    h2 {
+      margin-bottom: 2rem;
+      text-align: center;
+      font-size: 1.7rem;
+      color: #333333;
+    }
+
+    .ant-row {
+      width: 100%;
+    }
+
+    .ant-form-item {
+      height: 85px;
+      margin: 0;
+    }
+
+    .login-form-forgot {
+      float: right;
+    }
+
+    .login-form-button {
+      width: 100%;
+    }
+
+    .others {
+      display: flex;
+      margin: 1.5rem 0 0;
+      padding: 0 1.5rem;
+      font-size: 1.5rem;
+      align-items: center;
+      justify-content: space-between;
+
+      a {
+        display: inline-block;
+
+        img {
+          width: auto;
+          height: 3rem;
+        }
+
+        span {
+          margin-left: .5rem;
+          font-size: 1.14rem;
+          font-weight: bold;
+          color: #333333;
+        }
+      }
+    }
+
+    .ant-input {
+      height: 2rem;
+      font-size: 1.2rem;
+    }
+
+    .ant-input-affix-wrapper {
+      padding: .4rem 1rem;
+      box-shadow: none;
+      font-size: 1.2rem;
+      background-color: #fff;
+      color: #209FA1;
+    }
+
+    .login-form-margin {
+      margin-bottom: 1rem;
+    }
+
+    .ant-btn-primary {
+      height: 3rem;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #FEFEFE;
+      border-radius: 6px;
+    }
+  }
+}

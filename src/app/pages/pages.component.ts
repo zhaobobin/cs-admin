@@ -67,8 +67,8 @@ export class PagesComponent {
     console.log(this.searchValue);
   };
 
-  logout() {
-    // this.router.navigate(['/auth/login']);
+  logout = () => {
+    this.router.navigate(['/auth/login']);
   }
 
   handleClickMenu(currentUrl: string) {

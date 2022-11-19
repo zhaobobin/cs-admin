@@ -1,0 +1,50 @@
+<div class="login-wrapper">
+        
+  <div class="left area"></div>
+  <div class="right">
+    <div class="login-form">
+      <h2>{{title}}</h2>
+      <nz-tabset nzCentered [nzAnimated]="false">
+        <nz-tab nzTitle="账号密码">
+          <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+            <nz-form-item>
+              <nz-form-control nzErrorTip="请输入用户名!">
+                <nz-input-group>
+                  <input type="text" nz-input nzSize="large" formControlName="userName" placeholder="请输入用户名" />
+                </nz-input-group>
+              </nz-form-control>
+            </nz-form-item>
+            <nz-form-item>
+              <nz-form-control nzErrorTip="请输入密码!">
+                <nz-input-group>
+                  <input type="password" nz-input nzSize="large" formControlName="password" placeholder="请输入密码" />
+                </nz-input-group>
+              </nz-form-control>
+            </nz-form-item>
+            <nz-form-item>
+              <nz-form-control nzErrorTip="验证码输入有误!">
+                <nz-input-group [nzSuffix]="suffixTemplateInfo">
+                  <input type="text" nz-input nzSize="large" formControlName="captcha" placeholder="请输入验证码" />
+                </nz-input-group>
+                <ng-template #suffixTemplateInfo>
+                  <span class="captcha-text" (click)="getCaptcha()">3 3 6 5</span>
+                </ng-template>
+              </nz-form-control>
+            </nz-form-item>
+            <div nz-row class="login-form-margin">
+              <div nz-col [nzSpan]="12">
+                <label nz-checkbox formControlName="remember">
+                  <span>记住账号</span>
+                </label>
+              </div>
+              <div nz-col [nzSpan]="12"></div>
+            </div>
+            <button nz-button class="login-form-button" nzType="primary">登录</button>
+          </form>
+        </nz-tab>
+        <nz-tab nzTitle="微信登录">Content 2</nz-tab>
+        <nz-tab nzTitle="微信小程序">Content 3</nz-tab>
+      </nz-tabset>
+    </div>
+  </div>
+</div>
