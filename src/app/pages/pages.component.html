@@ -45,6 +45,34 @@
   <div class="layout-main">
     <div class="menu-wrapper">
       <div class="nav-menu">
+
+        <nz-tree-view [nzTreeControl]="treeControl" [nzDataSource]="dataSource" [nzDirectoryTree]="true">
+          <nz-tree-node *nzTreeNodeDef="let node" nzTreeNodeIndentLine>
+            <nz-tree-node-option
+              [nzDisabled]="node.disabled"
+              [nzSelected]="selectListSelection.isSelected(node)"
+              (nzClick)="selectListSelection.toggle(node)"
+            >
+              <img src="assets/images/workbench/folder.png" alt="folder" class="folder">
+              {{ node.name }}
+            </nz-tree-node-option>
+          </nz-tree-node>
+    
+          <nz-tree-node *nzTreeNodeDef="let node; when: hasChild" nzTreeNodeIndentLine>
+            <nz-tree-node-toggle>
+              <i nz-icon nzType="down" nzTreeNodeToggleRotateIcon></i>
+            </nz-tree-node-toggle>
+            <nz-tree-node-option
+              [nzDisabled]="node.disabled"
+              [nzSelected]="selectListSelection.isSelected(node)"
+              (nzClick)="selectListSelection.toggle(node)"
+            >
+              <img src="assets/images/workbench/folder.png" alt="folder" class="folder">
+              {{ node.name }}
+            </nz-tree-node-option>
+          </nz-tree-node>
+        </nz-tree-view>
+
         <ul 
           nz-menu 
           nzMode="inline"

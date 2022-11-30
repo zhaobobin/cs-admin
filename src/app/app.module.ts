@@ -28,6 +28,7 @@ import { NzSkeletonModule } from 'ng-zorro-antd/skeleton';
 import { NzCalendarModule } from 'ng-zorro-antd/calendar';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { NzTabsModule } from 'ng-zorro-antd/tabs';
+import { NzTreeViewModule } from 'ng-zorro-antd/tree-view';
 
 import { NotFoundComponent } from './pages/other/not-found.component';
 
@@ -74,7 +75,8 @@ registerLocaleData(zh);
     NzSkeletonModule,
     NzCalendarModule,
     NzMenuModule,
-    NzTabsModule
+    NzTabsModule,
+    NzTreeViewModule
   ],
   providers: [{ provide: NZ_I18N, useValue: zh_CN }],
   bootstrap: [AppComponent]

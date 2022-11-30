@@ -15,7 +15,7 @@
 
   .menu-wrapper {
     float: left;
-    width: 200px;
+    width: 250px;
     height: 100%;
     position: relative;
     z-index: 99;
@@ -25,7 +25,7 @@
   .layout-content {
     display: flex;
     height: 100%;
-    margin-left: 200px;
+    margin-left: 250px;
     flex-direction: column;
     overflow-x: auto;
   }
@@ -118,6 +118,46 @@
 }
 
 .nav-menu {
+  ::ng-deep .ant-tree {
+    color: #fff;
+    .ant-tree-list-holder-inner {
+      background: #0E89C7;
+    }
+    .ant-tree-switcher {
+      width: 30px;
+      line-height: 50px;
+      background: none;
+    }
+    .ant-tree-node-content-wrapper {
+      padding: 13px 0;
+      // line-height: 50px;
+    }
+    .ant-tree-treenode:hover {
+      &::before {
+        background: #0D6CB8;
+      }
+    }
+    .ant-tree-switcher-leaf-line::before {
+      right: 18px;
+    }
+    .ant-tree-treenode-leaf-last .ant-tree-switcher-leaf-line::before {
+      height: 24px !important;
+    }
+    .ant-tree-switcher-leaf-line::after {
+      right: 0;
+      width: 18px;
+      height: 24px;
+    }
+    .ant-tree-treenode-selected::before {
+      background: #0D6CB8;
+    }
+    img.folder {
+      width: auto;
+      height: 14px;
+      margin-left: 5px;
+      margin-right: 15px;
+    }
+  }
   ::ng-deep .ant-menu {
     color: #fff;
     background: none;
